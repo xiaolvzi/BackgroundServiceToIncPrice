@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="price" />
+        <Button
+            android:id="@+id/pric_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="start_and_register" />
+        <Button
+            android:id="@+id/inc_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="increase" />
+    </LinearLayout>
+</RelativeLayout>
