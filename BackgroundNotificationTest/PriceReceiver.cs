@@ -19,9 +19,10 @@ namespace BackgroundNotificationTest
     {
         public override void OnReceive(Context context, Intent intent)
         {
+            //you can push a notification here.
             Log.Error("lv", "OnReceive");
             string price=intent.GetStringExtra("price");
-            Toast.MakeText(context, "price", ToastLength.Short).Show();
+            Toast.MakeText(context, price, ToastLength.Short).Show();
         }
     }
 }

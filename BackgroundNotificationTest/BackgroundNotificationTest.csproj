@@ -55,6 +55,7 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDetectPrice.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PriceReceiver.cs" />
     <Compile Include="PriceService.cs" />

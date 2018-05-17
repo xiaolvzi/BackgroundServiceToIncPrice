@@ -10,13 +10,20 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using Java.Lang;
 
 namespace BackgroundNotificationTest
 {
     [Service]
-    class PriceService : Service
+    class PriceService : Service,IDetectPrice
     {
-
+        bool isTrack;
+        public void setTrack(bool b) {
+            this.isTrack = b;
+        }
+        public bool getTrack() {
+            return this.isTrack;
+        }
         public override IBinder OnBind(Intent intent)
         {
             return null;
@@ -26,8 +33,31 @@ namespace BackgroundNotificationTest
         {
             Log.Error("lv", "StartCommandResult");
             // in the service, you can dectect the change of price, and then call the piceInc method to send Broadcast
-            //piceInc(1);
+            
+
+            new Thread(() => {
+                
+                
+                while (true)
+                {
+                    if (requestNetworkAndGetAnswer()) {
+                        this.piceInc(1);
+                    }
+                    
+                }
+
+            }).Start();
+          
+            
             return StartCommandResult.Sticky;
+        }
+
+        private bool requestNetworkAndGetAnswer()
+        {
+            // to request the network
+            Thread.Sleep(3000);
+
+            return true;
         }
 
         public void piceInc(int price)

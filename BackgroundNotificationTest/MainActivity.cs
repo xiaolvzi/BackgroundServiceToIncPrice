@@ -51,6 +51,8 @@ namespace BackgroundNotificationTest
             //can't be killed easily.
             Intent intent = new Intent(this,typeof( PriceService));
             StartService(intent);
+
+
         }
 
         private void initView()
